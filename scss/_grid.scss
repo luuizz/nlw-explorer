@@ -1,0 +1,8 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100vh;
+    @include responsive(991px) {
+        grid-template-columns: 1fr;
+    }
+}

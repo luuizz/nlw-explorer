@@ -1,0 +1,152 @@
+aside {
+    background: url("../assets/bg-left.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid $gray-700;
+    .profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        .logo {
+            max-width: 16.8rem;
+            margin-bottom: 2rem;
+        }
+        .img-profile {
+            max-width: 16rem;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            background: linear-gradient(#d39e33, #ed5635, #633bbc) padding-box,
+            linear-gradient(#d39e33, #ed5635, #633bbc) border-box;
+        }
+        h3 {
+            font-weight: 400;
+            font-size: 3.2rem;
+            line-height: 125%;
+            text-align: center;
+            color: $gray-50;
+            max-width: 42rem;
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+    p {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 160%;
+        text-align: center;
+        color: $gray-200;
+    }
+    .mouse {
+        display: none;
+    }
+    @include responsive(991px) {
+        border-right: none;
+        padding: 3.2rem 1.2rem;
+        .mouse {
+            width: 2rem;
+            height: 2.6rem;
+            border: 2px solid $purple-600;
+            border-radius: 7px;
+            position: relative;
+            display: block;
+            margin-top: 4rem;
+            &:before {
+                content: "";
+                width: 0.2rem;
+                height: 0.6rem;
+                position: absolute;
+                top: 0.5rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background-color: $purple-600;
+                opacity: 1;
+                animation: slide 1.5s infinite;
+            }
+        }
+    }
+}
+
+nav {
+    background: url("../assets/bg-right.png") no-repeat center center;
+    background-size: cover;
+    padding: 6.4rem 6.4rem 0 6.4rem;
+    overflow-y: scroll;
+    background-color: $gray-900;
+    .memory {
+        display: flex;
+        gap: 1.6rem;
+        flex-direction: column;
+        margin-bottom: 6.4rem;
+        small {
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 160%;
+            color: $gray-100;
+        }
+        h1 {
+            font-weight: 700;
+            font-size: 3.2rem;
+            line-height: 125%;
+            color: $gray-50;
+        }
+        .image {
+            overflow: hidden;
+            border: 3px solid transparent;
+            transition: border 0.3s ease-out;
+            border-radius: 0.8rem;
+            &:hover {
+                border-color: #633bbc;
+            }
+            img {
+                height: 28rem;
+                object-fit: cover;
+                border-radius: 0.8rem;
+                transition: transform .3s ease-in-out;
+                &:hover {
+                    transform: scale(1.1);
+                 }
+            }
+        }
+        p {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 160%;
+            color: $gray-100;
+        }
+    }
+
+    @include responsive (2600px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3.2rem;
+    }
+
+    @include responsive (1920px) {
+        grid-template-columns: 1fr;
+    }
+
+    @include responsive(991px) {
+        overflow-y: hidden;
+        padding: 2.2rem;
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 1;
+        top: 5px
+    }
+
+    to {
+        opacity: 0;
+        top: 15px
+    }
+}
